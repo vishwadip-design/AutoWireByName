@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+		<bean id="book" class="com.Book" autowire="byName">
+		<!-- when we use byName, it checks the name of bean id and variable 
+		 name which we have given to the Auther class in Book class i.e
+		   author... -->
+		<!-- <property name="author" ref="author"></property>  -->
+		
+		<property name="prize" value="207.87"></property>
+		<property name="isbn" value="70-00-000"></property>
+		</bean>
+        <bean id="author" class="com.Author">
+       <!--  <bean id="author1" class="com.Author">  if we change name 
+             over here. then you will get null value-->
+        <property name="name" value="JAVA"></property>
+        <property name="address" value="USA"></property>
+          </bean>
+        <bean id="customer" class="com.Customer">
+        <property name="cname" value="vicky"></property>
+      
+        </bean>
+</beans>
